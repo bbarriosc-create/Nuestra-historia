@@ -91,26 +91,26 @@ function showSection(sectionId) {
     const sectionCuento = document.getElementById("section-cuento");
     const sectionElla = document.getElementById("section-ella");
     const sectionEl = document.getElementById("section-el");
-    const sectionMomentos = document.getElementById("section-momentos"); // Nueva sección de fotos
+    const sectionMomentos = document.getElementById("section-momentos"); 
     
     const navCuento = document.getElementById("nav-cuento");
     const navElla = document.getElementById("nav-ella");
     const navEl = document.getElementById("nav-el");
-    const navMomentos = document.getElementById("nav-momentos"); // Nuevo botón del menú
+    const navMomentos = document.getElementById("nav-momentos"); 
 
-    // Ocultar todas las secciones primero
+    // Ocultar todas las secciones
     if (sectionCuento) sectionCuento.classList.add("hidden");
     if (sectionElla) sectionElla.classList.add("hidden");
     if (sectionEl) sectionEl.classList.add("hidden");
     if (sectionMomentos) sectionMomentos.classList.add("hidden");
 
-    // Quitar la clase 'active' de todos los botones
+    // Quitar clase activa del menú
     if (navCuento) navCuento.classList.remove("active");
     if (navElla) navElla.classList.remove("active");
     if (navEl) navEl.classList.remove("active");
     if (navMomentos) navMomentos.classList.remove("active");
 
-    // Mostrar únicamente la sección seleccionada
+    // Mostrar sección seleccionada
     if (sectionId === 'cuento') {
         if (sectionCuento) sectionCuento.classList.remove("hidden");
         if (navCuento) navCuento.classList.add("active");
@@ -123,6 +123,17 @@ function showSection(sectionId) {
     } else if (sectionId === 'momentos') {
         if (sectionMomentos) sectionMomentos.classList.remove("hidden");
         if (navMomentos) navMomentos.classList.add("active");
+    }
+
+    // --- SOLUCIÓN DE SCROLL ---
+    // 1. Forzar la ventana principal a subir de inmediato (sin animación para evitar fallos)
+    window.scrollTo(0, 0);
+
+    // 2. Si la barra de scroll está en el contenedor derecho, lo obligamos a subir
+    // Nota: Si tu contenedor principal se llama diferente en HTML, cambia '.content-container' por su clase real
+    const scrollContainer = document.querySelector('.content-container');
+    if (scrollContainer) {
+        scrollContainer.scrollTop = 0;
     }
 }
 
