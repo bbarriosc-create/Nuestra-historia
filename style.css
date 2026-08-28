@@ -271,3 +271,69 @@ input:checked + .slider { background-color: #a855f7; } input:checked + .slider:b
     margin-top: 15px;
     font-weight: bold;
 }
+
+/* ==========================================================================
+   AJUSTES EXCLUSIVOS PARA CELULARES (DISEÑO RESPONSIVO)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Cambiamos el cuerpo para acomodar mejor el fondo */
+    body {
+        background-position: top center;
+        background-attachment: scroll;
+        flex-direction: column; /* Apila el menú arriba y el contenido abajo */
+    }
+
+    /* 2. Transformamos el menú lateral en un menú superior */
+    .sidebar { /* Nota: si tu clase del menú se llama diferente, cámbiala aquí */
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(15, 7, 30, 0.95); /* Fondo oscuro para que no se mezcle */
+        border-right: none;
+        border-bottom: 1px solid rgba(147, 51, 234, 0.3);
+        z-index: 100;
+    }
+
+    /* 3. Evitamos que el título se empalme con los botones */
+    .sidebar h1 { /* Ajusta si tu título usa otra etiqueta */
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* 4. Acomodamos los botones en horizontal para que quepan bien */
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    /* 5. Hacemos los botones un poco más pequeños */
+    .nav-links li {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    /* 6. Ajustamos el contenedor del cuento/fotos */
+    .content-container { /* Nota: ajusta al nombre de tu contenedor principal */
+        margin-left: 0;
+        padding: 20px 15px;
+        width: 100%;
+    }
+    
+    /* 7. Hacemos el contador de días un poco más pequeño */
+    .counter-container {
+        width: 90%;
+        padding: 15px;
+        margin-top: 10px;
+    }
+}
