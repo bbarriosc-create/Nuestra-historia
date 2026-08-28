@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fondos de la página -->
+    <div class="background-stars"></div>
+    <div class="background-silhouettes" id="bg-silhouettes"></div>
+
+    <!-- AUDIO DE FONDO (Piano Ghibli) -->
+    <audio id="bg-music" src="musica-fondo.mp3" loop></audio>
+    <!-- AUDIO NARRADOR (Tu voz) -->
+    <audio id="narrator-audio" src="narrador.mp3"></audio>
+
+    <!-- PANTALLA 1: INTRODUCCIÓN MISTERIOSA -->
+    <section class="intro-screen" id="intro-screen">
+        <div class="intro-content">
+            <h1 class="fade-text">Había una vez…</h1>
+            <p class="fade-text delay-1">Una historia que comenzó como un cuento.</p>
+            <p class="fade-text delay-2">Pero terminó siendo algo más.</p>
+            <h2 class="fade-text text-gold delay-3">Basada en hechos reales.</h2>
+            <button class="enter-btn delay-4" onclick="startExperience()">Entrar al cuento 🔮</button>
+        </div>
+    </section>
+
+    <!-- INTERFAZ PRINCIPAL (Oculta al inicio) -->
+    <div class="main-interface hidden" id="main-interface">
+        
+        <!-- Menú Lateral Izquierdo -->
+        <nav class="sidebar">
+            <div class="brand">
+                <h1>Nuestra Historia</h1>
+                <p>La bruja y el mago ✨</p>
+            </div>
+            <ul class="nav-links">
+                <!-- Se cambiaron las alertas por la función showSection para abrir las pestañas -->
+                <li id="nav-cuento" class="active" onclick="showSection('cuento')">📖 El Cuento</li>
+                <li id="nav-ella" onclick="showSection('ella')">🙋‍♀️ El hechizo de la bruja</li>
+                <li id="nav-el" onclick="showSection('el')">🙋‍♂️ El refugio del mago</li>
+                <li id="nav-momentos" onclick="showSection('momentos')">💜 Momentos</li>
+            </ul>
+            <div class="music-toggle">
+                <span>🎵 Música de fondo</span>
+                <label class="switch">
+                    <input type="checkbox" id="music-switch" checked onchange="toggleMusic()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Contador de Días (Arriba a la Derecha) -->
+        <div class="counter-box">
+            <p>Llevamos juntos</p>
+            <h2 id="days-counter">⏳ calculando...</h2>
+            <p class="subtext">de esta magia ✨</p>
+        </div>
+
+        <!-- Contenido Central -->
+        <main class="content-container">
+            
+            <!-- SECCIÓN 1: EL CUENTO PRINCIPAL -->
+            <div id="section-cuento" class="width-full-centered">
+                <header>
+                    <p class="chapter">Capítulo I</p>
+                    <h2 class="main-title">El Sol y la Luna</h2>
+                </header>
+
+                <!-- Botón del Narrador (Se queda dentro del cuento) -->
+                <div class="narrator-control" id="narrator-btn" onclick="toggleNarrator()">
+                    <div class="audio-icon" id="audio-icon">🔊</div>
+                    <div class="narrator-text">
+                        <p id="narrator-status">Escucha cómo se cuenta nuestra historia...</p>
+                        <span>(Narrador)</span>
+                    </div>
+                </div>
+
+                <!-- Texto Completo Unificado -->
+<article class="story-text">
+    <span class="quote-mark">“</span>
+
+    <p class="story-paragraph">Había una vez una bruja que vivía en el bosque, en lo más recóndito del bosque.</p>
+
+    <p class="story-paragraph">Ahí conoció a un mago que iba de paso.</p>
+
+    <p class="story-paragraph">Quedó encantada con el mago, tanto que lo siguió.</p>
+
+    <p class="story-paragraph">Entonces, ambos cruzaron miradas. Era como si el destino hubiese querido que ambos estuvieran en ese lugar.</p>
+
+    <p class="story-paragraph">Para ambos fue tan sorprendente que, tan solo con las miradas, hayan tenido una conexión.</p>
+
+    <p class="story-paragraph">Con esas miradas, sin hablar, se decían todo.</p>
+
+    <p class="story-paragraph">La conexión era tan fuerte y especial que ya no querían estar lejos el uno del otro.</p>
+
+    <p class="story-paragraph">Y así fue creciendo el sentimiento de cada uno, que comenzaron a hablar, y el deseo de estar juntos cada vez se volvía más grande, hasta que ya no podían estar sin verse.</p>
+
+    <p class="story-paragraph">Pero la bruja tenía un hechizo.</p>
+
+    <p class="story-paragraph">Ella iluminaba todo el bosque cada vez que sonreía.</p>
+
+    <p class="story-paragraph">El mago quedaba fascinado al verla sonreír.</p>
+
+    <p class="story-paragraph">Pero un día, esa sonrisa se fue apagando.</p>
+
+    <p class="story-paragraph">El mago, con toda su sabiduría, buscaba un hechizo para poder recuperar esa sonrisa.</p>
+
+    <p class="story-paragraph">Él sabía que, sin ese brillo, su vida podía volver a la oscuridad.</p>
+
+    <p class="story-paragraph">Oscuridad donde ella lo había sacado.</p>
+
+    <p class="story-paragraph">Lo que el mago no sabía era que la bruja se había enamorado perdidamente de él, pero se estaba alejando para que no se diera cuenta de que ya sin él no era nada.</p>
+
+    <p class="story-paragraph">Y el mago, al ver que ese brillo iba apagándose, decidió ir por ella.</p>
+
+    <p class="story-paragraph">Ella, al verlo, se escondió.</p>
+
+    <p class="story-paragraph">Le dijo que se fuera porque no quería salir herida.</p>
+
+    <p class="story-paragraph">Pero ella no sabía que el mago también se había enamorado de ella.</p>
+
+    <p class="story-paragraph">Él la veía y estudiaba cada uno de sus movimientos.</p>
+
+    <p class="story-paragraph">Y con cada día que pasaba, él se perdía en su mirada.</p>
+
+    <p class="story-paragraph">Y ya no soportaba estar lejos de ella.</p>
+
+    <p class="story-paragraph">Ella, a pesar de todo, sabía que estando al lado del mago sería feliz.</p>
+
+    <p class="story-paragraph">Y que el mago era el motivo de su brillo tan resplandeciente.</p>
+
+    <p class="story-paragraph">Entonces decidió que nunca se separaría de él, porque había encontrado su felicidad y quería todo con él, porque sin buscarse se encontraron y, sin darse cuenta, se enamoraron.</p>
+
+    <p class="story-paragraph">A pesar de que tenía miedo, el mago le hizo ver que juntos brillaban.</p>
+
+    <p class="story-paragraph">Entendió que quería pasar el resto de sus días con él, porque solo con él encontró la felicidad.</p>
+
+    <p class="story-paragraph">Y así...</p>
+
+    <p class="story-paragraph">La bruja iluminó nuevamente todo el bosque.</p>
+
+    <p class="story-paragraph">Y por más que la oscuridad los quería alcanzar, jamás lo lograría, porque ella alejaba toda oscuridad del bosque y de la vida del mago.</p>
+
+    <p class="story-paragraph">Y ellos eran...</p>
+
+    <p class="story-paragraph"><strong>El Sol y la Luna.</strong></p>
+
+    <p class="story-paragraph">Y desde entonces, la oscuridad desapareció.</p>
+
+    <p class="story-paragraph">No del todo, pero sabía que lo lograría estando al lado del mago.</p>
+
+    <span class="quote-mark-end">”</span>
+</article>
+
+                <!-- PANTALLA 3: MENSAJE FINAL DEL SEGUNDO MES -->
+                <section class="final-message">
+                    <p class="chat-quote">Esa noche en el chat dijiste: <span>"Por más historias así"</span></p>
+                    <h3 class="dedication">Pediste por más historias así, Mi Amor… <br>así que aquí estamos, haciendo nuestra propia historia.</h3>
+                    <h2 class="happy-month">Feliz segundo mes. ❤️</h2>
+                    <h1 class="happy-month">Al infinito y más allá</h1>
+                </section>
+            </div>
+
+                    <!-- SECCIÓN 2: EL HECHIZO DE LA BRUJA (TEXTO LIBRE EN LISTA) -->
+            <div id="section-ella" class="hidden">
+                <div class="spell-free-container">
+                    
+                    <header class="spell-free-header">
+                        <p class="spell-free-subtitle">Capítulo II</p>
+                        <h2 class="spell-free-title">El Hechizo de la Bruja</h2>
+                    </header>
+                    
+                    <div class="spell-free-list">
+                        <p class="spell-free-line highlight-first">Te has dado cuenta como te veo.</p>
+                        
+                        <p class="spell-free-line">Veo el brillo de tus ojos.</p>
+                        <p class="spell-free-line">La forma en que te expresas, cada gesto que haces.</p>
+                        <p class="spell-free-line">Cuando me decías mentirooosoooo.</p>
+                        <p class="spell-free-line">Cuando me dices ha noooo y gesticulas muy bonito la palabra.</p>
+                        <p class="spell-free-line">La forma en que te ríes</p>
+                        <p class="spell-free-line">La expresión de "los dedos, los dedos"</p>
+                        
+                        <p class="spell-free-line block-paragraph">
+                            Cuando me dices no me veas porque me chívio jajaja, amor el que se pone nervioso soy yo porque me ves con esos ojitos hermosos y te das cuenta que aparto mi mirada, es porque con tu mirada llegas a mi corazón.
+                        </p>
+                        
+                        <p class="spell-free-line">
+                            Cuando te expresas y te digo que remarcas la z, uuuuuf escucharte cuando hablas así, y no te das cuenta, amor eso es lo más bonito.
+                        </p>
+                    </div>
+
+                    <footer class="spell-free-footer">
+                        <h3 class="spell-free-reveal">“Ese era el verdadero hechizo.”</h3>
+                        <h2 class="spell-free-closure">“No era magia. Eras tú.” ❤️</h2>
+                    </footer>
+                    
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: EL MAGO (CARTA PERSONAL) -->
+    <div id="section-el" class="hidden">
+        <div class="magician-container">
+            <header class="magician-header">
+                <p class="magician-subtitle">Capítulo III</p>
+                <h2 class="magician-title">El Refugio del Mago</h2>
+            </header>
+            
+            <div class="magician-letter">
+                <p class="letter-paragraph">
+                    Amor, literalmente entraste a mi vida cuando menos lo esperaba, y entraste a mi corazón. Viniste a cambiar muchas cosas de mí. Calmas mi mente cuando no me va bien, y es que, con solo verte, se callan mis pensamientos y comienzas a existir solo tú.
+                </p>
+                <p class="letter-paragraph">
+                    Mi cabeza suele dar mil vueltas todos los días, siempre intentando analizar, calcular y resolver cada problema que se me cruza... pero a tu lado no hay nada que descifrar, solo me dejo llevar. Gracias por ser mi paz.
+                </p>
+                <p class="letter-signature-text">
+                    Dicen que apenas son dos meses, pero a mí me bastaron para saber que quiero seguir construyendo esta historia a tu lado.
+                </p>
+                <h2 class="letter-closure">"Esto es solo el comienzo de nuestra historia." ❤️</h2>
+            </div>
+        </div>
+    </div>
+
+   <!-- SECCIÓN 4: MOMENTOS (GALERÍA POLAROID) -->
+    <div id="section-momentos" class="hidden">
+        <div class="moments-container">
+            <p class="moments-subtitle">Nuestra Galería</p>
+            <h2 class="moments-title">Momentos Inolvidables</h2>
+            
+            <div class="photo-grid">
+                <!-- Foto 1 -->
+                <div class="polaroid">
+                    <img src="foto1.jpg" alt="Momento 1">
+                    <div class="polaroid-text">El día que empezó todo ✨</div>
+                </div>
+                <!-- Foto 2 -->
+                <div class="polaroid">
+                    <img src="foto2.jpg" alt="Momento 2">
+                    <div class="polaroid-text">Mi sonrisa favorita ❤️</div>
+                </div>
+                <!-- Foto 3 -->
+                <div class="polaroid">
+                    <img src="foto3.jpg" alt="Momento 3">
+                    <div class="polaroid-text">Una aventura más 🖼️</div>
+                </div>
+                <!-- Foto 4 -->
+                <div class="polaroid">
+                    <img src="foto4.jpg" alt="Momento 4">
+                    <div class="polaroid-text">Tus ojitos hermosos 🥺</div>
+                </div>
+                <!-- Foto 5 -->
+                <div class="polaroid">
+                    <img src="foto5.jpg" alt="Momento 5">
+                    <div class="polaroid-text">Nuestras locuras 🫨</div>
+                </div>
+                <!-- Foto 6 -->
+                <div class="polaroid">
+                    <img src="foto6.jpg" alt="Momento 6">
+                    <div class="polaroid-text">No dejaba de mirarte 👀</div>
+                </div>
+                <!-- Foto 7 -->
+                <div class="polaroid">
+                    <img src="foto7.jpg" alt="Momento 7">
+                    <div class="polaroid-text">Mi lugar seguro 🏰</div>
+                </div>
+                <!-- Foto 8 -->
+                <div class="polaroid">
+                    <img src="foto8.jpg" alt="Momento 8">
+                    <div class="polaroid-text">Por muchos meses más 🥂</div>
+                </div>
+            </div>
+        </div>
+    </div>
+               
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
